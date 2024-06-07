@@ -1,0 +1,96 @@
+---
+import { db, Sites } from 'astro:db';
+import {Image} from "astro:assets";
+import "../styles.css";
+
+import Vouivre from "../Wyvern_Liber_Floridus.jpg"
+import Layout from "../layouts/Layout.astro";
+
+const sites = await db.select().from(Sites);
+---
+
+<Layout>
+    <div class="burrito grid">
+        <div class="start">
+            <h1>Vouivre</h1>
+
+
+            <figure>
+                <Image src={Vouivre} alt="Vouivre. Liber Floridus, 1448." />
+                <figcaption>Vouivre. Liber Floridus, 1448.</figcaption>
+            </figure>
+        </div>
+
+        <div class="end">
+            <h2>Voui... what?</h2>
+
+            <p>I was looking for a name to experiment with Web Ring, so something in ...WR, and Vouivre just came to me.</p>
+            <p>In English we say "Guivre" and I preferred to use the French name.</p>
+            <p>To find out more, go to <a href="https://en.wikipedia.org/wiki/Guivre">Wikipedia</a>.</p>
+
+            <h2>Friends of the Vouivre</h2>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>name</th>
+                    <th>domain</th>
+                </tr>
+                </thead>
+                <tbody>
+                {
+                    sites.map((site) => (
+                            <tr>
+                                <td>{site.name}</td>
+                                <td><a href={site.domain}>{site.domain}</a></td>
+                            </tr>
+                    ))
+                }
+                </tbody>
+            </table>
+
+            <a class="join" href="mailto:vouivre@ehret.me?subject=I want to join the Vouivre">Join the Vouivre!</a>
+
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .burrito {
+        margin: 0 auto;
+    }
+
+    .grid {
+        display: grid;
+        gap: var(--babase);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        text-align: start;
+    }
+
+    .join {
+        display: block;
+        text-decoration: none;
+        margin: var(--babase) auto;
+        border: 2px solid var(--prime);
+        padding: var(--base) var(--babase);
+        text-align: center;
+    }
+
+    .join:is(:active, :focus, :hover) {
+        background-color: var(--prime);
+        color: var(--wevet);
+    }
+
+    @media screen and (min-width: 42rem) {
+        .grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+</style>

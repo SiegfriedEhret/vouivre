@@ -1,0 +1,27 @@
+{
+  "name": "vouivre",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write .",
+    "db:login": "astro login",
+    "db:link": "astro link",
+    "db:push": "pnpm astro db push --remote"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/db": "^0.11.4",
+    "astro": "^4.10.0",
+    "sharp": "^0.33.4",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.1",
+    "prettier-plugin-astro": "^0.14.0"
+  }
+}

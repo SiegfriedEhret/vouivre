@@ -1,0 +1,107 @@
+:root {
+  /* sizes */
+  --base: 8px;
+  --babase: calc(2 * var(--base));
+
+  /* fonts */
+  --font: "Berkeley Mono", sans-serif;
+  --font-mono: "Berkeley Mono", monospace;
+
+  /* From Farrow & Ball */
+  --ovalRoomBlue: #8b9d9b;
+  --railings: #45484b;
+  --paean-black: rgb(73, 66, 72);
+  --imperial-purple: hsl(237 11% 38%);
+  --lake-red: hsl(348 52% 55%);
+  --wevet: hsl(17 17% 92%);
+  --strong-white: rgb(229, 224, 219);
+  --code: #2d2d2d;
+
+  /*  theme vars */
+  --back: var(--wevet);
+  --back-reverse: var(--imperial-purple);
+  --baback: var(--strong-white);
+  --prime: var(--lake-red);
+  --text: var(--imperial-purple);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --back: var(--imperial-purple);
+    --back-reverse: var(--wevet);
+    --baback: var(--paean-black);
+    --prime: var(--lake-red);
+    --text: var(--wevet);
+  }
+}
+
+@font-face {
+  font-family: "Berkeley Mono";
+  src: url("/fonts/BerkeleyMono/BerkeleyMonoVariable-Regular.woff2")
+    format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-size: 1rem;
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+
+body {
+  margin: 0;
+  overflow-wrap: break-word;
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 1rem;
+  background-color: var(--baback);
+  font-feature-settings: "kern", "liga";
+  letter-spacing: -0.02rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block-start: 0;
+  padding: 0;
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  max-width: 100%;
+}
+figcaption {
+  text-align: center;
+}
+
+a {
+  color: var(--text);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+  transition: all 0.25s ease;
+}
+
+a:is(:active, :focus, :hover) {
+  color: var(--prime);
+  text-underline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  a:is(:active, :focus, :hover) {
+    color: var(--wevet);
+  }
+}

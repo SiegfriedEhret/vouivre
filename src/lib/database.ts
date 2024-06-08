@@ -20,7 +20,7 @@ export async function getCurrentRow(domain: string) {
 }
 
 export async function getRows(index1: number, index2: number) {
-  return await db
+  return db
     .select()
     .from(Sites)
     .where(or(eq(Sites.index, index1), eq(Sites.index, index2)))
@@ -28,7 +28,7 @@ export async function getRows(index1: number, index2: number) {
 }
 
 export async function getRandomRow() {
-  return await db
+  return db
     .select()
     .from(Sites)
     .orderBy(sql`random()`)

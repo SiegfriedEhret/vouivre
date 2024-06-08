@@ -5,8 +5,6 @@ export const Sites = defineTable({
     domain: column.text({ primaryKey: true }),
     name: column.text(),
     index: column.number({ unique: true }),
-    next: column.number({ unique: true, optional: true }),
-    previous: column.number({ unique: true, optional: true }),
     added: column.date({ default: NOW }),
   },
   indexes: [{ on: ["domain"], unique: true }],

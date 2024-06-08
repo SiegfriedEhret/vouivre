@@ -2,13 +2,14 @@ import { column, defineDb, defineTable, NOW } from "astro:db";
 
 export const Sites = defineTable({
   columns: {
-    uuid: column.text({ primaryKey: true }),
-    order: column.number({ unique: true }),
+    domain: column.text({ primaryKey: true }),
     name: column.text(),
-    domain: column.text({ unique: true }),
+    index: column.number({ unique: true }),
+    next: column.number({ unique: true, optional: true }),
+    previous: column.number({ unique: true, optional: true }),
     added: column.date({ default: NOW }),
   },
-  indexes: [{ on: ["order", "domain"], unique: true }],
+  indexes: [{ on: ["domain"], unique: true }],
 });
 
 // https://astro.build/db/config

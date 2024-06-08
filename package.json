@@ -1,7 +1,7 @@
 {
   "name": "vouivre",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,7 +11,9 @@
     "format": "prettier --write .",
     "db:login": "astro login",
     "db:link": "astro link",
-    "db:push": "pnpm astro db push --remote"
+    "db:push:schemas": "astro db push --remote",
+    "db:push:schemas:force": "astro db push --remote --force-reset",
+    "db:push:data": "astro db execute db/seed.ts --remote"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",

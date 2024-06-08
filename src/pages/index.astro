@@ -25,7 +25,7 @@ const sites = await db.select().from(Sites);
             <h2>Voui... what?</h2>
 
             <p>I was looking for a name to experiment with Web Ring, so something in ...WR, and Vouivre just came to me.</p>
-            <p>In English we say "Guivre" and I preferred to use the French name.</p>
+            <p>In English it is called a "Guivre" and I preferred to use the French name.</p>
             <p>To find out more, go to <a href="https://en.wikipedia.org/wiki/Guivre">Wikipedia</a>.</p>
 
             <h2>Friends of the Vouivre</h2>
@@ -49,8 +49,16 @@ const sites = await db.select().from(Sites);
                 </tbody>
             </table>
 
+            <h2>How to la vouivre?</h2>
+
             <a class="join" href="mailto:vouivre@ehret.me?subject=I want to join the Vouivre">Join the Vouivre!</a>
 
+            <p>Once I have added your domain, you will have access to the following links:</p>
+            <ul>
+                <li><code>/previous/example.com</code> for the previous website in the ring</li>
+                <li><code>/next/example.com</code> for the next website in the ring</li>
+                <li><code>/random</code> for a random website</li>
+            </ul>
         </div>
     </div>
 </Layout>
@@ -90,7 +98,7 @@ const sites = await db.select().from(Sites);
 
     @media screen and (min-width: 42rem) {
         .grid {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 2fr;
         }
     }
 </style>

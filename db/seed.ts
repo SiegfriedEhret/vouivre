@@ -4,16 +4,16 @@ import { db, Sites } from "astro:db";
 export default async function seed() {
   await db.insert(Sites).values([
     {
-      uuid: crypto.randomUUID(),
-      order: 1,
-      name: "Siegfried Ehret",
       domain: "https://ehret.me",
+      name: "Siegfried Ehret",
+      index: 1,
+      next: 2,
     },
     {
-      uuid: crypto.randomUUID(),
-      order: 2,
-      name: "Siegfried Ehret",
       domain: "https://sieg.fr",
+      name: "Siegfried Ehret",
+      index: 2,
+      previous: 1,
     },
   ]);
 }

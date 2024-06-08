@@ -13,11 +13,19 @@
     <main>
         <slot/>
     </main>
+    <footer>
+        <p>Made by <a href="https://ehret.me">Siegfried Ehret</a>. <a href="github.com/SiegfriedEhret/vouivre/">⌨️ code</a>.</p>
+    </footer>
+    <script data-goatcounter="https://vouivre.goatcounter.com/count"
+            async src="/analytics.js"></script>
 </body>
 </html>
 
 <style>
-    main {
+    main, footer {
         padding: var(--base) var(--babase);
+    }
+    footer {
+        text-align: center;
     }
 </style>

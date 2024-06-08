@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/analytics.js",
+      "destination": "https://gc.zgo.at/count.js"
+    }
+  ]
+}

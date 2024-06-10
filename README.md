@@ -29,3 +29,5 @@ Then, try the following:
 ## License
 
 Licensed under the [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.html), see the [LICENSE](./LICENSE) file.
+
+The font used is [Berkeley Mono](https://berkeleygraphics.com/typefaces/berkeley-mono/), the licensing details are [here](https://berkeleygraphics.com/products/FX-100/).
